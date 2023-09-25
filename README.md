@@ -10,11 +10,18 @@ git clone https://github.com/ryhara/Philosophers-tester.git
 cd Philosophers-tester
 ```
 ```
-chmode +x test.sh
+chmode +x test.sh main.sh
 ```
 
+## Test
+- simple test
 ```
 ./test.sh <num> <num> <num> <num> [ <num> ]
+```
+
+- all test
+```
+./main.sh
 ```
 
 
