@@ -7,8 +7,8 @@ print_params() {
 }
 
 check_philo() {
-    if [ ! -x "./philo" ]; then
-        make -C philo re
+    if [ ! -x "../philo/philo" ]; then
+        make -C ../philo re
     fi
 }
 
@@ -19,21 +19,22 @@ process_with_4_args() {
     num4=$4
 
     check_philo
-    echo "---------------------------"
+    echo "----------------------------------------"
     print_params $num1 "number_of_philosophers"
     print_params $num2 "time_to_die"
     print_params $num3 "time_to_eat"
     print_params $num4 "time_to_sleep"
-    echo "---------------------------"
-    ./philo $num1 $num2 $num3 $num4 > result &
+    echo "----------------------------------------"
+    ../philo/philo $num1 $num2 $num3 $num4 > result &
 
     program_pid=$!
     start_time=$(date +%s)
     SECONDS=0
-    while [ $SECONDS -lt 10 ]; do
+    while [ $SECONDS -lt 5 ]; do
         if ! ps -p $program_pid > /dev/null; then
             end_time=$(date +%s)
             elapsed_time=$(($end_time - $start_time))
+            echo -e "\033[0;32m[Success]\033[0m"
             echo -e "\033[0;31m[philo die]\033[0m"
             exit 0
         fi
@@ -43,8 +44,9 @@ process_with_4_args() {
     # 10秒以上経過してもプログラムが終了しない場合は、強制終了
     end_time=$(date +%s)
     elapsed_time=$((end_time - start_time))
+    echo -e "\033[0;32m[Success]\033[0m"
     echo -e "\033[0;32m[philo not die]\033[0m"
-    echo "プログラムは10秒以上実行されました。強制終了します（ 経過時間: $elapsed_time s）"
+    echo "プログラムは5秒実行されました。強制終了します（ 経過時間: $elapsed_time s）"
     kill -9 $program_pid
     kill -9 $program_pid
     grep died result > result2
@@ -63,14 +65,14 @@ process_with_5_args() {
     num5=$5
 
     check_philo
-    echo "---------------------------"
+    echo "----------------------------------------"
     print_params $num1 "number_of_philosophers"
     print_params $num2 "time_to_die"
     print_params $num3 "time_to_eat"
     print_params $num4 "time_to_sleep"
     print_params $num5 "number_of_times_each_philosopher_must_eat"
-    echo "---------------------------"
-    ./philo $num1 $num2 $num3 $num4 $num5 > result
+    echo "----------------------------------------"
+    ../philo/philo $num1 $num2 $num3 $num4 $num5 > result
 
     eating_count=$(cat result | grep 'is eating' | wc -l  | tr -d ' ')
     expected_count=$(($num1 * $num5))
@@ -84,7 +86,6 @@ process_with_5_args() {
         echo -e "$eating_count (Expected: $expected_count)"
         cat result | grep 'is eating' > log
     fi
-
 
     rm result
 }
