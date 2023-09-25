@@ -78,12 +78,12 @@ process_with_5_args() {
     expected_count=$(($num1 * $num5))
     if [ $eating_count -ge $expected_count ]; then
         echo -e "\033[0;32m[Success]\033[0m"
-        echo -e "Eating count is greater than or equal to expected:"
-        echo -e "Result: $eating_count (Expected: $expected_count)"
+        echo -e "\033[0;32mEating count is greater than or equal to expected:\033[0m"
+        echo -e "\033[0;32mResult: $eating_count (Expected: $expected_count)\033[0m"
     else
         echo -e "\033[0;31m[Fail]\033[0m"
-        echo -e "Eating count is less than expected:"
-        echo -e "$eating_count (Expected: $expected_count)"
+        echo -e "\033[0;31mEating count is less than expected:\033[0m"
+        echo -e "\033[0;31mResult: $eating_count (Expected: $expected_count)\033[0m"
         cat result | grep 'is eating' > log
     fi
 
