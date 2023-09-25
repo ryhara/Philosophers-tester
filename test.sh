@@ -8,7 +8,7 @@ print_params() {
 
 check_philo() {
     if [ ! -x "./philo" ]; then
-        make re
+        make -C philo re
     fi
 }
 
