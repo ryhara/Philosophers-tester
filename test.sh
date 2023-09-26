@@ -19,12 +19,12 @@ process_with_4_args() {
     num4=$4
 
     check_philo
-    echo "----------------------------------------"
-    print_params $num1 "number_of_philosophers"
-    print_params $num2 "time_to_die"
-    print_params $num3 "time_to_eat"
-    print_params $num4 "time_to_sleep"
-    echo "----------------------------------------"
+    # echo "----------------------------------------"
+    # print_params $num1 "number_of_philosophers"
+    # print_params $num2 "time_to_die"
+    # print_params $num3 "time_to_eat"
+    # print_params $num4 "time_to_sleep"
+    # echo "----------------------------------------"
     ../philo/philo $num1 $num2 $num3 $num4 > result &
 
     program_pid=$!
@@ -34,7 +34,6 @@ process_with_4_args() {
         if ! ps -p $program_pid > /dev/null; then
             end_time=$(date +%s)
             elapsed_time=$(($end_time - $start_time))
-            echo -e "\033[0;32m[Success]\033[0m"
             echo -e "\033[0;31m[philo die]\033[0m"
             exit 0
         fi
@@ -43,7 +42,6 @@ process_with_4_args() {
 
     end_time=$(date +%s)
     elapsed_time=$((end_time - start_time))
-    echo -e "\033[0;32m[Success]\033[0m"
     echo -e "\033[0;32m[philo not die]\033[0m"
     echo "The program ran for 5 seconds. Force exit.（time: $elapsed_time s）"
     kill -9 $program_pid > /dev/null
@@ -63,13 +61,13 @@ process_with_5_args() {
     num5=$5
 
     check_philo
-    echo "----------------------------------------"
-    print_params $num1 "number_of_philosophers"
-    print_params $num2 "time_to_die"
-    print_params $num3 "time_to_eat"
-    print_params $num4 "time_to_sleep"
-    print_params $num5 "number_of_times_each_philosopher_must_eat"
-    echo "----------------------------------------"
+    # echo "----------------------------------------"
+    # print_params $num1 "number_of_philosophers"
+    # print_params $num2 "time_to_die"
+    # print_params $num3 "time_to_eat"
+    # print_params $num4 "time_to_sleep"
+    # print_params $num5 "number_of_times_each_philosopher_must_eat"
+    # echo "----------------------------------------"
     ../philo/philo $num1 $num2 $num3 $num4 $num5 > result
 
     eating_count=$(cat result | grep 'is eating' | wc -l  | tr -d ' ')
