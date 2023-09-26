@@ -11,7 +11,7 @@ git clone https://github.com/ryhara/Philosophers-tester.git
 cd Philosophers-tester
 ```
 ```
-chmode +x test.sh main.sh
+chmod +x test.sh main.sh
 ```
 
 ## Test
