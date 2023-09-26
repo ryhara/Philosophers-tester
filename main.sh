@@ -34,6 +34,16 @@ run_test_case() {
     echo "----------------------------------------"
 }
 
+run_test_category() {
+    category_name=$1
+    test_cases=("${@:2}")
+
+    echo "-------------- $category_name -----------------"
+    for args in "${test_cases[@]}"; do
+        run_test_case "$args"
+    done
+}
+
 test_die=(
     "1 800 200 200"
     "4 310 200 100"
@@ -54,20 +64,43 @@ test_stop=(
     "4 410 200 200 10"
 )
 
-echo "---------------- die -------------------"
-for ((i=0; i<${#test_die[@]}; i+=1)); do
-    args=${test_die[$i]}
-    run_test_case "$args"
-done
+if [ $# -eq 0 ]; then
+    echo "Running all test cases"
 
-echo "-------------- not die -----------------"
-for ((i=0; i<${#test_not_die[@]}; i+=1)); do
-    args=${test_not_die[$i]}
-    run_test_case "$args"
-done
+    run_test_category "die" "${test_die[@]}"
+    run_test_category "not die" "${test_not_die[@]}"
+    run_test_category "stop" "${test_stop[@]}"
+else
+    case $1 in
+        d)
+            run_test_category "die" "${test_die[@]}"
+            ;;
+        n)
+            run_test_category "not die" "${test_not_die[@]}"
+            ;;
+        s)
+            run_test_category "stop" "${test_stop[@]}"
+            ;;
+        *)
+            echo "Invalid argument. Use 'd' for die, 'n' for not die, 's' for stop."
+            ;;
+    esac
+fi
 
-echo "--------------- stop -------------------"
-for ((i=0; i<${#test_stop[@]}; i+=1)); do
-    args=${test_stop[$i]}
-    run_test_case "$args"
-done
+# echo "---------------- die -------------------"
+# for ((i=0; i<${#test_die[@]}; i+=1)); do
+#     args=${test_die[$i]}
+#     run_test_case "$args"
+# done
+
+# echo "-------------- not die -----------------"
+# for ((i=0; i<${#test_not_die[@]}; i+=1)); do
+#     args=${test_not_die[$i]}
+#     run_test_case "$args"
+# done
+
+# echo "--------------- stop -------------------"
+# for ((i=0; i<${#test_stop[@]}; i+=1)); do
+#     args=${test_stop[$i]}
+#     run_test_case "$args"
+# done
