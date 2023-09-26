@@ -44,7 +44,7 @@ process_with_4_args() {
     elapsed_time=$((end_time - start_time))
     echo -e "\033[0;32m[philo not die]\033[0m"
     echo "The program ran for 5 seconds. Force exit.（time: $elapsed_time s）"
-    kill -9 $program_pid > /dev/null
+    kill -9 $program_pid > /dev/null 2>&1
     grep died result > result2
     grep -o "[0-9]* [0-9]*" result2 > result3
     id=$(cat result3 | awk '{print $2}')
