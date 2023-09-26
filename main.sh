@@ -54,18 +54,20 @@ test_stop=(
     "4 410 200 200 10"
 )
 
+echo "---------------- die -------------------"
 for ((i=0; i<${#test_die[@]}; i+=1)); do
     args=${test_die[$i]}
     run_test_case "$args"
 done
 
+echo "-------------- not die -----------------"
 for ((i=0; i<${#test_not_die[@]}; i+=1)); do
     args=${test_not_die[$i]}
     run_test_case "$args"
 done
 
+echo "--------------- stop -------------------"
 for ((i=0; i<${#test_stop[@]}; i+=1)); do
     args=${test_stop[$i]}
     run_test_case "$args"
 done
-
