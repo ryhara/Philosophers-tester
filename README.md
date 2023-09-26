@@ -26,14 +26,29 @@ chmod +x test.sh main.sh
 ```
 
 - die test
+```
+./main.sh d
+```
 - not die test
+```
+./main.sh n
+```
+
 - stop test
+```
+./main.sh s
+```
 
 - error case
 ```
  Error cases are not supported.
  Check it out for yourself.
 ```
+
+### ※Note
+If you press ctrl+C during the test, there may be a program running in the background.
+
+Please check with ps and kill
 
 ## Review
 - The actual review will involve multiple tests with 5 or fewer people.
