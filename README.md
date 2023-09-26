@@ -25,6 +25,10 @@ chmod +x test.sh main.sh
 ./main.sh
 ```
 
+- die test
+- not die test
+- stop test
+
 - error case
 ```
  Error cases are not supported.
@@ -35,7 +39,8 @@ chmod +x test.sh main.sh
 - The actual review will involve multiple tests with 5 or fewer people.
 - Any tests will be conducted with no more than 200 people.
 
+## Help
 
 
-### Reference
+## Reference
 https://github.com/MichelleJiam/LazyPhilosophersTester
