@@ -41,14 +41,12 @@ process_with_4_args() {
         sleep 1
     done
 
-    # 10秒以上経過してもプログラムが終了しない場合は、強制終了
     end_time=$(date +%s)
     elapsed_time=$((end_time - start_time))
     echo -e "\033[0;32m[Success]\033[0m"
     echo -e "\033[0;32m[philo not die]\033[0m"
-    echo "プログラムは5秒実行されました。強制終了します（ 経過時間: $elapsed_time s）"
-    kill -9 $program_pid
-    kill -9 $program_pid
+    echo "The program ran for 5 seconds. Force exit.（time: $elapsed_time s）"
+    kill -9 $program_pid > /dev/null
     grep died result > result2
     grep -o "[0-9]* [0-9]*" result2 > result3
     id=$(cat result3 | awk '{print $2}')

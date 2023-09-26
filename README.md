@@ -24,6 +24,13 @@ chmode +x test.sh main.sh
 ./main.sh
 ```
 
+- error case
+```
+ Error cases are not supported.
+ Check it out for yourself.
+```
+
+
 
 ### Reference
 https://github.com/MichelleJiam/LazyPhilosophersTester
