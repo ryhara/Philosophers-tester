@@ -48,7 +48,7 @@ chmod +x test.sh main.sh
 ### ※Note
 If you press ctrl+C during the test, there may be a program running in the background.
 
-Please check with ps and kill
+Please check with ps and kill.
 
 ## Review
 - The actual review will involve multiple tests with 5 or fewer people.
@@ -58,6 +58,9 @@ Please check with ps and kill
 If you have any questions or test cases, please comment on the issue or discussion. 
 
 I will respond in Japanese or English.
+
+- [Issues](https://github.com/ryhara/Philosophers-tester/issues)
+- [Discussion](https://github.com/ryhara/Philosophers-tester/discussions)
 
 
 ## Reference
