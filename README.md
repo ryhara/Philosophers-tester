@@ -55,6 +55,9 @@ Please check with ps and kill
 - Any tests will be conducted with no more than 200 people.
 
 ## Help
+If you have any questions or test cases, please comment on the issue or discussion. 
+
+I will respond in Japanese or English.
 
 
 ## Reference
