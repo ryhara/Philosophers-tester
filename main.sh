@@ -37,11 +37,10 @@ run_test_category() {
     category_name=$1
     test_cases=("${@:2}")
 
-    echo "-------------- $category_name -----------------"
+    echo "~~~~~~~~~~~~~~ $category_name ~~~~~~~~~~~~~~~"
     for args in "${test_cases[@]}"; do
         run_test_case "$args"
     done
-    echo "----------------------------------------------"
     echo ""
 }
 
