@@ -57,7 +57,7 @@ chmod +x test.sh main.sh
  Check it out for yourself.
 ```
 
-### ※Note
+### **Warning**
 If you press ctrl+C during the test, there may be a program running in the background.
 
 Please check with ps and kill.
