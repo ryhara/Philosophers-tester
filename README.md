@@ -75,6 +75,3 @@ I will respond in Japanese or English.
 - [Issues](https://github.com/ryhara/Philosophers-tester/issues)
 - [Discussion](https://github.com/ryhara/Philosophers-tester/discussions)
 
-
-## Reference
-https://github.com/MichelleJiam/LazyPhilosophersTester
