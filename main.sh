@@ -29,7 +29,6 @@
 run_test_case() {
     args=$1
 
-    echo -e "\033[0;34mRunning test case: $args\033[0m"
     ./test.sh $args
     echo "----------------------------------------"
 }
@@ -42,6 +41,8 @@ run_test_category() {
     for args in "${test_cases[@]}"; do
         run_test_case "$args"
     done
+    echo "----------------------------------------------"
+    echo ""
 }
 
 test_die=(

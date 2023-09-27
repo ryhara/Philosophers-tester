@@ -19,12 +19,7 @@ process_with_4_args() {
     num4=$4
 
     check_philo
-    # echo "----------------------------------------"
-    # print_params $num1 "number_of_philosophers"
-    # print_params $num2 "time_to_die"
-    # print_params $num3 "time_to_eat"
-    # print_params $num4 "time_to_sleep"
-    # echo "----------------------------------------"
+    echo -e "\033[0;34mRunning test case: $num1 $num2 $num3 $num4 \033[0m"
     ../philo/philo $num1 $num2 $num3 $num4 > result &
 
     program_pid=$!
@@ -61,13 +56,7 @@ process_with_5_args() {
     num5=$5
 
     check_philo
-    # echo "----------------------------------------"
-    # print_params $num1 "number_of_philosophers"
-    # print_params $num2 "time_to_die"
-    # print_params $num3 "time_to_eat"
-    # print_params $num4 "time_to_sleep"
-    # print_params $num5 "number_of_times_each_philosopher_must_eat"
-    # echo "----------------------------------------"
+    echo -e "\033[0;34mRunning test case: $num1 $num2 $num3 $num4 $num5\033[0m"
     ../philo/philo $num1 $num2 $num3 $num4 $num5 > result
 
     eating_count=$(cat result | grep 'is eating' | wc -l  | tr -d ' ')
