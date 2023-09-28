@@ -70,8 +70,6 @@ Please check with ps and kill.
 ## Help
 If you have any questions or test cases, please comment on the issue or discussion.
 
-I will respond in Japanese or English.
-
 - [Issues](https://github.com/ryhara/Philosophers-tester/issues)
 - [Discussion](https://github.com/ryhara/Philosophers-tester/discussions)
 
