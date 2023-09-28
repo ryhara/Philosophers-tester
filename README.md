@@ -15,8 +15,8 @@ Philosophers repository
 │   └── test.sh
 └── philo
     ├── Makefile
-    ├── *.h
-    └── *.c
+    ├── */*.h
+    └── */*.c
 ```
 
 ```
