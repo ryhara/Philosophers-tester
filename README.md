@@ -2,7 +2,7 @@
 
 ## Usage
 
-- At the same level as the "philo" directory
+- At the same level as the "philo" directory.
 ```
 git clone https://github.com/ryhara/Philosophers-tester.git
 ```
